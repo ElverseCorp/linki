@@ -52,7 +52,7 @@ build cmake_object_order_depends_target_linki: phony || .
 build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_unscanned_Debug C$:/Projects/linki/native/Windows/src/socket.c || cmake_object_order_depends_target_linki
   DEFINES = -Dlinki_EXPORTS
   DEP_FILE = CMakeFiles\linki.dir\native\Windows\src\socket.c.obj.d
-  FLAGS = -g -std=gnu11
+  FLAGS = -Wall -Wextra -pedantic -D DEBUG -std=gnu11
   INCLUDES = -IC:/Projects/linki/native/Windows/include
   OBJECT_DIR = CMakeFiles\linki.dir
   OBJECT_FILE_DIR = CMakeFiles\linki.dir\native\Windows\src
@@ -66,7 +66,7 @@ build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_un
 # Link the shared library liblinki.dll
 
 build liblinki.dll liblinki.dll.a: C_SHARED_LIBRARY_LINKER__linki_Debug CMakeFiles/linki.dir/native/Windows/src/socket.c.obj
-  LANGUAGE_COMPILE_FLAGS = -g
+  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -pedantic -D DEBUG
   LINK_FLAGS = -lWs2_32
   LINK_LIBRARIES = -static  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\linki.dir
