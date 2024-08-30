@@ -26,9 +26,9 @@ extern const char* _error_buffer[];
 /**
  * @brief Initialize Linki libraries.
  * 
- * @returns initialization status. `0` if OK, else error code.
+ * @returns 
  */
-extern int linki_init(void); 
+extern void linki_init(void); 
 
 /**
  * @brief Creates web server based on configuration.

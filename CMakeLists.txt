@@ -5,7 +5,6 @@ project(linki)
 # C language
 set(CMAKE_C_STANDARD 11)
 
-
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release)
 endif()

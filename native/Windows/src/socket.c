@@ -22,7 +22,7 @@ const char* _error_buffer[] = {
     [LINKI_ERROR_MALLOC]    = "Memeory allocation error",
     [LINKI_ERROR_RECV]      = "Receive data error",
 
-    [LINKI_ERROR_RECV]      = "Receive data error",
+    [LINKI_ERROR_CACCEPT]   = "Client accept error",
 
 };
 
@@ -37,8 +37,10 @@ static const size_t default_answer_size = 114;
 
 
 
-int linki_init(void) {
-     WSAStartup(MAKEWORD(2, 2), &_wsa) ;
+void linki_init(void) {
+    if (WSAStartup(MAKEWORD(2, 2), &_wsa) != 0) {
+        _error = LINKI_ERROR_INIT;
+    } 
 }
 
 linki_web_t linki_create(linki_web_config_t config) {
@@ -106,7 +108,7 @@ void linki_start(linki_web_t* web, int backlog, char* (*handler)(char*)) {
     }
 
     if (client_socket == INVALID_SOCKET) {
-        _error = LINKI_ERROR_RECV;
+        _error = LINKI_ERROR_CACCEPT;
         return;
     }
 }
