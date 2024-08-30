@@ -82,6 +82,10 @@
 			[
 				{
 					"backtrace" : 4,
+					"path" : "C:/Projects/linki/cross/include"
+				},
+				{
+					"backtrace" : 4,
 					"path" : "C:/Projects/linki/native/Windows/include"
 				}
 			],

@@ -18,7 +18,7 @@ if (WIN32)
 endif()
 
 add_library(linki SHARED)
-target_include_directories(linki PUBLIC "native/${CMAKE_SYSTEM_NAME}/include/")
+target_include_directories(linki PUBLIC "${CMAKE_CURRENT_SOURCE_DIR}/cross/include/" "${CMAKE_CURRENT_SOURCE_DIR}/native/${CMAKE_SYSTEM_NAME}/include/")
 
 
 file(GLOB_RECURSE LINKI_SRC "native/${CMAKE_SYSTEM_NAME}/src/*.c")

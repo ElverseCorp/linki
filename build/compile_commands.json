@@ -1,7 +1,7 @@
 [
 {
   "directory": "C:/Projects/linki/build",
-  "command": "C:\\msys64\\mingw64\\bin\\cc.exe -Dlinki_EXPORTS -IC:/Projects/linki/native/Windows/include -Wall -Wextra -pedantic -D DEBUG -std=gnu11 -o CMakeFiles\\linki.dir\\native\\Windows\\src\\socket.c.obj -c C:\\Projects\\linki\\native\\Windows\\src\\socket.c",
+  "command": "C:\\msys64\\mingw64\\bin\\cc.exe -Dlinki_EXPORTS -IC:/Projects/linki/cross/include -IC:/Projects/linki/native/Windows/include -Wall -Wextra -pedantic -D DEBUG -std=gnu11 -o CMakeFiles\\linki.dir\\native\\Windows\\src\\socket.c.obj -c C:\\Projects\\linki\\native\\Windows\\src\\socket.c",
   "file": "C:\\Projects\\linki\\native\\Windows\\src\\socket.c",
   "output": "CMakeFiles\\linki.dir\\native\\Windows\\src\\socket.c.obj"
 }

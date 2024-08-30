@@ -53,7 +53,7 @@ build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_un
   DEFINES = -Dlinki_EXPORTS
   DEP_FILE = CMakeFiles\linki.dir\native\Windows\src\socket.c.obj.d
   FLAGS = -Wall -Wextra -pedantic -D DEBUG -std=gnu11
-  INCLUDES = -IC:/Projects/linki/native/Windows/include
+  INCLUDES = -IC:/Projects/linki/cross/include -IC:/Projects/linki/native/Windows/include
   OBJECT_DIR = CMakeFiles\linki.dir
   OBJECT_FILE_DIR = CMakeFiles\linki.dir\native\Windows\src
 
