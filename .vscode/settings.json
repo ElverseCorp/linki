@@ -1,0 +1,14 @@
+{
+    "files.associations": {
+        "*.txt": "plaintext",
+        "winsock2.h": "c",
+        "socket.enum..h": "c",
+        "socket.h": "c",
+        "buffer": "c",
+        "array": "c",
+        "string": "c",
+        "socket": "c",
+        "string_view": "c",
+        "system_error": "c"
+    }
+}

@@ -1,0 +1,5 @@
+# ninja log v6
+3	695	7466427536840221	CMakeFiles/linki.dir/native/Windows/src/socket.c.obj	31cb27caef88ecd6
+554	646	7466260787853656	liblinki.a	4de54df7fb975419
+15	73	7466427666961668	liblinki.dll.a	9dcb551db91ba0f1
+15	73	7466427666961668	liblinki.dll	9dcb551db91ba0f1
