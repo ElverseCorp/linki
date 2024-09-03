@@ -6,7 +6,7 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.10"
@@ -19,7 +19,7 @@
 					]
 				}
 			],
-			"name" : "Debug",
+			"name" : "Release",
 			"projects" : 
 			[
 				{
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "linki::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-linki-Debug-9eb52e0f6a1f09ca723d.json",
+					"jsonFile" : "target-linki-Release-61d828c502381c2677d3.json",
 					"name" : "linki",
 					"projectIndex" : 0
 				}

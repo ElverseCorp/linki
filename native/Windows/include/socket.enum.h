@@ -38,21 +38,30 @@
 #define LINKI_IPPROTO_RAW       IPPROTO_RAW
 #define LINKI_IPPROTO_IP        IPPROTO_IP
 
+// ---------------- ADDRESS ACCESS
+
+#define LINKI_INADDR_ANY        INADDR_ANY
+#define LINKI_INADDR_LOOPBACK   INADDR_LOOPBACK
+#define LINKI_INADDR_BROADCAST  INADDR_BROADCAST
+#define LINKI_INADDR_NONE       INADDR_NONE
 
 // ---------------- ERRORS
-#define LINKI_OK            0x00
 
-#define LINKI_ERROR_INIT    0x01
-#define LINKI_ERROR_SOCKET  0x02
-#define LINKI_ERROR_BIND    0x03
-#define LINKI_ERROR_LISTEN  0x04
-#define LINKI_ERROR_MALLOC  0x05
-#define LINKI_ERROR_RECV    0x06
-#define LINKI_ERROR_CACCEPT 0x07
+typedef enum {
+    LINKI_OK            =   0x00,
+    LINKI_ERROR_INIT    =   0x01,
+    LINKI_ERROR_SOCKET  =   0x02,
+    LINKI_ERROR_BIND    =   0x03,
+    LINKI_ERROR_LISTEN  =   0x04,
+    LINKI_ERROR_MALLOC  =   0x05,
+    LINKI_ERROR_RECV    =   0x06,
+    LINKI_ERROR_CACCEPT =   0x07,
+} linki_error_t;
+
+
 
 /* Data */
 
-typedef uint8_t linki_error_t;
 typedef int linki_web_af_t;
 typedef int linki_web_type_t;
 typedef int linki_web_proto_t;
@@ -74,9 +83,10 @@ typedef struct {
 typedef struct {
     uint16_t port;              // web port
     linki_web_af_t af;          // address family
-    linki_web_type_t type;      // socket type
-    linki_web_proto_t protocol; // protocol
-    linki_web_buffer_t buffer;  // buffer
+    linki_web_type_t sock_type; // socket type LINKI_SOCK_
+    linki_web_proto_t iproto;   // protocol LINKI_IPROTO_
+    u_long inaddr;              // bind configuration LINKI_INADDR_
+    size_t buffer_size;         // input buffer size in bytes
 } linki_web_config_t;
 
 

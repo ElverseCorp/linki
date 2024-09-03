@@ -12,7 +12,7 @@
 
 # =============================================================================
 # Project: linki
-# Configurations: Debug
+# Configurations: Release
 # =============================================================================
 
 #############################################
@@ -24,7 +24,7 @@ ninja_required_version = 1.5
 #############################################
 # Set configuration variable for custom commands.
 
-CONFIGURATION = Debug
+CONFIGURATION = Release
 # =============================================================================
 # Include auxiliary files.
 
@@ -49,10 +49,10 @@ cmake_ninja_workdir = C$:/Projects/linki/build/
 
 build cmake_object_order_depends_target_linki: phony || .
 
-build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_unscanned_Debug C$:/Projects/linki/native/Windows/src/socket.c || cmake_object_order_depends_target_linki
+build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_unscanned_Release C$:/Projects/linki/native/Windows/src/socket.c || cmake_object_order_depends_target_linki
   DEFINES = -Dlinki_EXPORTS
   DEP_FILE = CMakeFiles\linki.dir\native\Windows\src\socket.c.obj.d
-  FLAGS = -Wall -Wextra -pedantic -D DEBUG -std=gnu11
+  FLAGS = -Wall -Wextra -pedantic -O3 -std=gnu11
   INCLUDES = -IC:/Projects/linki/cross/include -IC:/Projects/linki/native/Windows/include
   OBJECT_DIR = CMakeFiles\linki.dir
   OBJECT_FILE_DIR = CMakeFiles\linki.dir\native\Windows\src
@@ -65,9 +65,8 @@ build CMakeFiles/linki.dir/native/Windows/src/socket.c.obj: C_COMPILER__linki_un
 #############################################
 # Link the shared library liblinki.dll
 
-build liblinki.dll liblinki.dll.a: C_SHARED_LIBRARY_LINKER__linki_Debug CMakeFiles/linki.dir/native/Windows/src/socket.c.obj
-  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -pedantic -D DEBUG
-  LINK_FLAGS = -lWs2_32
+build liblinki.dll liblinki.dll.a: C_SHARED_LIBRARY_LINKER__linki_Release CMakeFiles/linki.dir/native/Windows/src/socket.c.obj
+  LANGUAGE_COMPILE_FLAGS = -Wall -Wextra -pedantic -O3
   LINK_LIBRARIES = -static  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\linki.dir
   POST_BUILD = cd .

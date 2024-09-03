@@ -36,7 +36,6 @@ static const size_t default_answer_size = 114;
  ************************************************************/
 
 
-
 void linki_init(void) {
     if (WSAStartup(MAKEWORD(2, 2), &_wsa) != 0) {
         _error = LINKI_ERROR_INIT;
@@ -44,10 +43,10 @@ void linki_init(void) {
 }
 
 linki_web_t linki_create(linki_web_config_t config) {
-    linki_web_t web;
+    linki_web_t web = {0};
 
     // Create socket
-    web.socket = socket(config.af, config.type, config.protocol);
+    web.socket = socket(config.af, config.sock_type, config.iproto);
     if (web.socket == INVALID_SOCKET) {
         _error = LINKI_ERROR_SOCKET;
         return web;
@@ -55,7 +54,7 @@ linki_web_t linki_create(linki_web_config_t config) {
 
     // Create web server
     web.server.sin_family = config.af;
-    web.server.sin_addr.s_addr = INADDR_ANY;
+    web.server.sin_addr.s_addr = config.inaddr;
     web.server.sin_port = htons(config.port);
 
     // Bind
@@ -65,8 +64,8 @@ linki_web_t linki_create(linki_web_config_t config) {
     }
 
     // Allocate buffer
-    config.buffer.data = calloc(config.buffer.size, 1);
-    if (config.buffer.data == NULL) {
+    web.buffer.data = calloc(config.buffer_size, 1);
+    if (web.buffer.data == NULL) {
         _error = LINKI_ERROR_MALLOC;
         return web;
     }
@@ -79,6 +78,7 @@ void linki_start(linki_web_t* web, int backlog, char* (*handler)(char*)) {
     // listening
     if (listen(web->socket, backlog) != 0) {
         _error = LINKI_ERROR_BIND;
+        closesocket(web->socket);
         return;
     }
 
@@ -92,6 +92,7 @@ void linki_start(linki_web_t* web, int backlog, char* (*handler)(char*)) {
         int recv_size = recv(client_socket, web->buffer.data, web->buffer.size, 0);
         if (recv_size == SOCKET_ERROR) {
             _error = LINKI_ERROR_RECV;
+            closesocket(client_socket);
             return;
         }
         
@@ -109,6 +110,8 @@ void linki_start(linki_web_t* web, int backlog, char* (*handler)(char*)) {
 
     if (client_socket == INVALID_SOCKET) {
         _error = LINKI_ERROR_CACCEPT;
+        closesocket(web->socket);
+        closesocket(client_socket);
         return;
     }
 }

@@ -17,7 +17,6 @@
 		"commands" : 
 		[
 			"add_library",
-			"add_link_options",
 			"target_link_libraries",
 			"target_include_directories",
 			"target_sources"
@@ -34,31 +33,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 20,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 17,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 26,
+				"line" : 17,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
 				"line" : 21,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 25,
 				"parent" : 0
 			}
 		]
@@ -69,7 +62,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-Wall -Wextra -pedantic -D DEBUG -std=gnu11"
+					"fragment" : "-Wall -Wextra -pedantic -O3 -std=gnu11"
 				}
 			],
 			"defines" : 
@@ -81,11 +74,11 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 3,
 					"path" : "C:/Projects/linki/cross/include"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 3,
 					"path" : "C:/Projects/linki/native/Windows/include"
 				}
 			],
@@ -115,16 +108,11 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "-lWs2_32",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 3,
 				"fragment" : "-static",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "-lws2_32",
 				"role" : "libraries"
 			},
@@ -155,7 +143,7 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 5,
+			"backtrace" : 4,
 			"compileGroupIndex" : 0,
 			"path" : "native/Windows/src/socket.c",
 			"sourceGroupIndex" : 0
